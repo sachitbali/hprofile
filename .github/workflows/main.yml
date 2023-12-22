@@ -21,7 +21,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
-          
+ 
+    
       - name: Setup SonarQube
         uses: warchant/setup-sonar-scanner@v7
     
@@ -36,3 +37,11 @@ jobs:
            -Dsonar.jacoco.reportsPath=target/jacoco.exec 
            -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
            -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/
+  BUILD_AND_PUBLISH:
+    runs-on: ubuntu-latest
+    steps:
+        - name: code checkout
+          uses: actions/checkout@v4
+
+        - name: Update application.properties file
+          
