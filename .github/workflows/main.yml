@@ -26,6 +26,8 @@ jobs:
       needs: Testing
       runs-on: ubuntu-latest
       steps:
+        - name: code checkout
+          uses: actions/checkout@v4
         - name: Setup SonarQube
           uses: warchant/setup-sonar-scanner@v7
         - name: SonarQube Scan
