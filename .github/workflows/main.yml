@@ -1,7 +1,7 @@
 name: Vprofile
 on: workflow_dispatch
 env:
-  AWS_REGION: us-apsoutheast-2
+  AWS_REGION: ap-southeast-2
 jobs:
   Testing:
     runs-on: ubuntu-latest
