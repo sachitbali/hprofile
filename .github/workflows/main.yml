@@ -21,17 +21,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
-  
-  SONAR:
-      needs: Testing
-      runs-on: ubuntu-latest
-      steps:
-        - name: code checkout
-          uses: actions/checkout@v4
-        - name: Setup SonarQube
-          uses: warchant/setup-sonar-scanner@v7
-        - name: SonarQube Scan
-          run: sonar-scanner
+          
+      - name: Setup SonarQube
+        uses: warchant/setup-sonar-scanner@v7
+      - name: SonarQube Scan
+        run: sonar-scanner
            -Dsonar.host.url=${{ secrets.SONAR_URL }}
            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
